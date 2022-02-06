@@ -4,7 +4,7 @@ let kepek=["sovereign.png", "magyarszentek.png",
 		   "magyarszabadsag.png","aranymeteorit.jpg",
 		   "aranyerme.jpg","aranydukat.png"];
 
-let aktualis = 0;
+let aktualis = 2;
 
 ReactDOM.render(
     React.createElement(App),
@@ -12,7 +12,7 @@ ReactDOM.render(
 );
 
 function App(){
-    var [kep, setKep] = React.useState(aktualis);
+    const [kep, setKep] = React.useState(aktualis);
     console.log(aktualis);
     return React.createElement(
         "div",
@@ -27,15 +27,12 @@ function App(){
             {
                 className: "btn btn-primary m-4",
                 style:{
-                    width: "95px"
+                    width: "100px"
                 },
                 onClick: ()=>{
                     if(aktualis > 0){
-                        setKep(aktualis--);
-                        /*document.getElementById("kep").innerHTML = "";
-                        var kep = document.createElement("img");
-                        kep.src = "image/" + kepek[aktualis];
-                        document.getElementById("kep").appendChild(kep);*/
+                        aktualis--;
+                        setKep(aktualis);
                     }
                     console.log(aktualis);
                 }
@@ -47,13 +44,9 @@ function App(){
             {
                 src: kepek[kep],
                 style:{
-                    width: "400px",
-                    height: "200px",
-                    //display: "flex",
-                    //flexDirection: "column"
-                    //marginLeft: "auto",
-                    //marginRight: "auto",
-                },
+                    width: "600px",
+                    height: "300px"
+                }
             }
         ),
         React.createElement(
@@ -62,20 +55,18 @@ function App(){
                 className: "btn btn-primary m-4",
                 style:{
                     //float: "right",
-                    width: "95px"
+                    width: "100px"
                 },
                 onClick: ()=>{
                     if(aktualis < 5){
-                        setKep(aktualis++);
-                        /*document.getElementById("kep").innerHTML = "";
-                        var kep = document.createElement("img");
-                        kep.src = "image/" + kepek[aktualis];
-                        document.getElementById("kep").appendChild(kep);*/
+                        aktualis++;
+                        setKep(aktualis);
                     }
                     console.log(aktualis);
                 }
             },
             "Következő"
-        ),
+        )   
     )
 }
+
