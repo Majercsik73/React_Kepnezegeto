@@ -4,7 +4,7 @@ let kepek=["sovereign.png", "magyarszentek.png",
 		   "magyarszabadsag.png","aranymeteorit.jpg",
 		   "aranyerme.jpg","aranydukat.png"];
 
-let aktualis = 2;
+let aktualis = 0;
 
 ReactDOM.render(
     React.createElement(App),
@@ -20,7 +20,6 @@ function App(){
             style:{
                 textAlign: "center"
             },
-            className: "border"
         },
         React.createElement(
             "button",
@@ -34,7 +33,6 @@ function App(){
                         aktualis--;
                         setKep(aktualis);
                     }
-                    console.log(aktualis);
                 }
             },
             "Előző"
@@ -54,7 +52,6 @@ function App(){
             {
                 className: "btn btn-primary m-4",
                 style:{
-                    //float: "right",
                     width: "100px"
                 },
                 onClick: ()=>{
@@ -62,7 +59,6 @@ function App(){
                         aktualis++;
                         setKep(aktualis);
                     }
-                    console.log(aktualis);
                 }
             },
             "Következő"
